@@ -11,10 +11,3 @@ tasks:
 vscode:
   extensions:
     - haskell.haskell
-
-github:
-  prebuilds:
-    # enable for the default branch (defaults to true)
-    master: true
-    # enable for all branches in this repo (defaults to false)
-    branches: true
