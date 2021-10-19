@@ -4,9 +4,9 @@ tasks:
   - init: |
       cabal update
       stack build
-
-    command: |
       stack test
+    command: |
+      stack ghci
 
 vscode:
   extensions:
