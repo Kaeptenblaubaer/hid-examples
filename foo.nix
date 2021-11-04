@@ -20,7 +20,7 @@ mkDerivation {
   libraryHaskellDepends = [
     base bytestring cereal connection exceptions fingertree
     haskell-src-exts haskell-src-meta hedgehog mtl network
-    network-simple split template-haskell text-show-
+    network-simple split template-haskell text-show
   ];
   libraryToolDepends = [ hpack ];
   executableHaskellDepends = [
