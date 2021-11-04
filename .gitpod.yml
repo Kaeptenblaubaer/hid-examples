@@ -12,3 +12,4 @@ vscode:
     - bbenoist.Nix
     - haskell.haskell
     - cab404.vscode-direnv
+    - arrterian.nix-env-selector
