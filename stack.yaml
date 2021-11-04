@@ -1,4 +1,4 @@
-resolver: lts-17.4
+resolver: lts-18.13
 
 packages:
 - .
@@ -28,7 +28,7 @@ extra-deps:
   - Chart-diagrams-1.9.3
   - SVGFonts-1.7.0.1
   - diagrams-core-1.4.2
-  - diagrams-lib-1.4.3
+  - diagrams-lib-1.4.4
   - diagrams-postscript-1.5
   - diagrams-svg-1.4.3
   - svg-builder-0.1.1
@@ -38,3 +38,7 @@ extra-deps:
   - statestack-0.3
   - fast-builder-0.1.2.1
   - postgresql-syntax-0.3.0.3
+
+nix:
+  enable: true
+  packages: [glpk, pcre,zlib]
