@@ -1,13 +1,14 @@
 image:
   file: .gitpod.Dockerfile
 tasks:
-  - init: |
-      cabal update
+  - init: >
+      mkdir -p /home/gitpod/.config/nix &&
+      echo 'sandbox = false' >> /home/gitpod/.config/nix/nix.conf
+  - command:
       stack build
-      stack test
-    command: |
-      stack ghci
 
 vscode:
   extensions:
+    - bbenoist.Nix
     - haskell.haskell
+    - cab404.vscode-direnv
