@@ -6,7 +6,6 @@ tasks:
       echo 'sandbox = false' >> /home/gitpod/.config/nix/nix.conf &&
       stack build
   - command:
-
       python3 -m http.server 8080
 
 vscode:
