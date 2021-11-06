@@ -4,8 +4,10 @@ tasks:
   - init: >
       mkdir -p /home/gitpod/.config/nix &&
       echo 'sandbox = false' >> /home/gitpod/.config/nix/nix.conf
-  - command:
       stack build
+  - command:
+
+      python3 -m http.server 8080
 
 vscode:
   extensions:
