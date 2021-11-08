@@ -22,7 +22,7 @@ RUN touch .bash_profile \
 RUN echo '. /home/gitpod/.nix-profile/etc/profile.d/nix.sh' >> /home/gitpod/.bashrc
 RUN mkdir -p /home/gitpod/.config/nixpkgs \
   && echo \
-  '{ allowUnfree = true; allowBroken = true;} \n\
+  '{ allowUnfree = true; allowBroken = true; \n\
    packageOverrides = super: let self = super.pkgs; in \n\
   { \n\
     myHaskellEnv = self.haskell.packages.ghc7102.ghcWithPackages \n\
