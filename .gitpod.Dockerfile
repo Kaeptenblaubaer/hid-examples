@@ -31,7 +31,7 @@ RUN mkdir -p /home/gitpod/.config/nixpkgs \
   '{ allowUnfree = true; allowBroken = true; \n\
    packageOverrides = super: let self = super.pkgs; in \n\
   { \n\
-    myHaskellEnv = self.haskell.packages."ghc865Binary".ghcWithPackages \n\
+    myHaskellEnv = self.haskell.packages.ghc8107.ghcWithPackages \n\
     (haskellPackages: with haskellPackages; [ \n\
     # libraries \n\
     arrows async cgi criterion \n\
