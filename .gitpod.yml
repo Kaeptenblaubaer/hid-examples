@@ -4,7 +4,7 @@ tasks:
   - init: >
       mkdir -p /home/gitpod/.config/nix &&
       echo 'sandbox = false' >> /home/gitpod/.config/nix/nix.conf &&
-      stack build
+      nix-shell stack build
   - command:
       python3 -m http.server 8080
 
