@@ -20,6 +20,12 @@ RUN touch .bash_profile \
  && curl https://nixos.org/releases/nix/nix-2.3.14/install | sh
 
 RUN echo '. /home/gitpod/.nix-profile/etc/profile.d/nix.sh' >> /home/gitpod/.bashrc
+
+# Install cachix
+RUN . /home/gitpod/.nix-profile/etc/profile.d/nix.sh \
+  && nix-env -iA cachix -f https://cachix.org/api/v1/install \
+  && cachix use cachix
+  
 RUN mkdir -p /home/gitpod/.config/nixpkgs \
   && echo \
   '{ allowUnfree = true; allowBroken = true; \n\
@@ -33,11 +39,6 @@ RUN mkdir -p /home/gitpod/.config/nixpkgs \
     cabal-install haskintex ]); \n\
    }; \n\
   }' > /home/gitpod/.config/nixpkgs/config.nix
-
-# Install cachix
-RUN . /home/gitpod/.nix-profile/etc/profile.d/nix.sh \
-  && nix-env -iA cachix -f https://cachix.org/api/v1/install \
-  && cachix use cachix
 
 # Install git
 RUN . /home/gitpod/.nix-profile/etc/profile.d/nix.sh \
