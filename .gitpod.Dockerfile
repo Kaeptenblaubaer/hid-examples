@@ -22,16 +22,16 @@ RUN touch .bash_profile \
 RUN echo '. /home/gitpod/.nix-profile/etc/profile.d/nix.sh' >> /home/gitpod/.bashrc
 RUN mkdir -p /home/gitpod/.config/nixpkgs \
   && echo \
-  '{ allowUnfree = true; allowBroken = true;} 
-   packageOverrides = super: let self = super.pkgs; in 
-  {
-    myHaskellEnv = self.haskell.packages.ghc7102.ghcWithPackages 
-    (haskellPackages: with haskellPackages; [ 
-    # libraries 
-    arrows async cgi criterion 
-    # tools 
-    cabal-install haskintex ]); 
-   };
+  '{ allowUnfree = true; allowBroken = true;} \n\
+   packageOverrides = super: let self = super.pkgs; in \n\
+  { \n\
+    myHaskellEnv = self.haskell.packages.ghc7102.ghcWithPackages \n\
+    (haskellPackages: with haskellPackages; [ \n\
+    # libraries \n\
+    arrows async cgi criterion \n\
+    # tools \n\
+    cabal-install haskintex ]); \n\
+   }; \n\
   }' > /home/gitpod/.config/nixpkgs/config.nix
 
 
