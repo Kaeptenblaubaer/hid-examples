@@ -44,9 +44,9 @@ RUN mkdir -p /home/gitpod/.config/nixpkgs \
 RUN . /home/gitpod/.nix-profile/etc/profile.d/nix.sh \
   && nix-env -i git git-lfs
 
-# Install stack
+# Install stack myHaskellEnv
 RUN . /home/gitpod/.nix-profile/etc/profile.d/nix.sh \
-  && nix-env -f "<nixpkgs>" -iA myHaskellEnv
+  && nix-env -f "<nixpkgs>" -iA stack
 
 # Install direnv
 RUN . /home/gitpod/.nix-profile/etc/profile.d/nix.sh \
