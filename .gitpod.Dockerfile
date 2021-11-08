@@ -25,7 +25,7 @@ RUN mkdir -p /home/gitpod/.config/nixpkgs \
   '{ allowUnfree = true; allowBroken = true; \n\
    packageOverrides = super: let self = super.pkgs; in \n\
   { \n\
-    myHaskellEnv = self.haskell.packages.ghc7102.ghcWithPackages \n\
+    myHaskellEnv = self.haskell.packages."ghc865Binary".ghcWithPackages \n\
     (haskellPackages: with haskellPackages; [ \n\
     # libraries \n\
     arrows async cgi criterion \n\
@@ -33,12 +33,6 @@ RUN mkdir -p /home/gitpod/.config/nixpkgs \
     cabal-install haskintex ]); \n\
    }; \n\
   }' > /home/gitpod/.config/nixpkgs/config.nix
-
-
-
-
-
-
 
 # Install cachix
 RUN . /home/gitpod/.nix-profile/etc/profile.d/nix.sh \
