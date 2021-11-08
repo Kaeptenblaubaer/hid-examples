@@ -45,8 +45,7 @@ RUN . /home/gitpod/.nix-profile/etc/profile.d/nix.sh \
 
 # Install stack
 RUN . /home/gitpod/.nix-profile/etc/profile.d/nix.sh \
-  && nix-env -f "<nixpkgs>" -iA stack \
-  && nix-env -f "<nixpkgs>" -iA cabal-install 
+  && nix-env -f "<nixpkgs>" -iA myHaskellEnv
 
 # Install direnv
 RUN . /home/gitpod/.nix-profile/etc/profile.d/nix.sh \
