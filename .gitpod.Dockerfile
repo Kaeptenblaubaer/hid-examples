@@ -31,7 +31,8 @@ RUN mkdir -p /home/gitpod/.config/nixpkgs \
     arrows async cgi criterion 
     # tools 
     cabal-install haskintex ]); 
-   };' > /home/gitpod/.config/nixpkgs/config.nix
+   };
+  }' > /home/gitpod/.config/nixpkgs/config.nix
 
 
 
