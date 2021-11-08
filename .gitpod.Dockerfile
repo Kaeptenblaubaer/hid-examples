@@ -31,7 +31,7 @@ RUN mkdir -p /home/gitpod/.config/nixpkgs \
   '{ allowUnfree = true; allowBroken = true; \n\
    packageOverrides = super: let self = super.pkgs; in \n\
   { \n\
-    myHaskellEnv = self.haskell.packages.ghc8107.ghcWithPackages \n\
+    myHaskellEnv = self.haskell.packages."ghc865Binary".ghcWithPackages \n\
     (haskellPackages: with haskellPackages; [ \n\
     # libraries \n\
     arrows async cgi criterion \n\
@@ -43,10 +43,6 @@ RUN mkdir -p /home/gitpod/.config/nixpkgs \
 # Install git
 RUN . /home/gitpod/.nix-profile/etc/profile.d/nix.sh \
   && nix-env -i git git-lfs
-
-# Install stack myHaskellEnv
-RUN . /home/gitpod/.nix-profile/etc/profile.d/nix.sh \
-  && nix-env -f "<nixpkgs>" -iA stack
 
 # Install direnv
 RUN . /home/gitpod/.nix-profile/etc/profile.d/nix.sh \

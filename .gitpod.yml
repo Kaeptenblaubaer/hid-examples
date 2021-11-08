@@ -3,8 +3,8 @@ image:
 tasks:
   - init: >
       mkdir -p /home/gitpod/.config/nix &&
-      echo 'sandbox = false' >> /home/gitpod/.config/nix/nix.conf
-      nix-shell 
+      echo 'sandbox = false' >> /home/gitpod/.config/nix/nix.conf &&
+      nix-env -f "<nixpkgs>" -iA myHaskellEnv.
   - command:
       python3 -m http.server 8080
   
