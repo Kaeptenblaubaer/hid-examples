@@ -28,17 +28,7 @@ RUN . /home/gitpod/.nix-profile/etc/profile.d/nix.sh \
   
 RUN mkdir -p /home/gitpod/.config/nixpkgs \
   && echo \
-  '{ allowUnfree = true; allowBroken = true; \n\
-   packageOverrides = super: let self = super.pkgs; in \n\
-  { \n\
-    myHaskellEnv = self.haskell.packages.ghc884.ghcWithPackages \n\
-    (haskellPackages: with haskellPackages; [ \n\
-    # libraries \n\
-    arrows async cgi criterion \n\
-    # tools \n\
-    cabal-install haskintex ]); \n\
-   }; \n\
-  }' > /home/gitpod/.config/nixpkgs/config.nix
+  '{ allowUnfree = true; allowBroken = true; }' > /home/gitpod/.config/nixpkgs/config.nix
 
 # Install git
 RUN . /home/gitpod/.nix-profile/etc/profile.d/nix.sh \
